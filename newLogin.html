@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOGIN System</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f2f5f9;
+        }
+
+        .login-container {
+            width: 380px;
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .college-name {
+            text-align: center;
+            color: #2563eb;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .login-title {
+            text-align: center;
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 7px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 7px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .login-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .reset-btn {
+            background: #e5e7eb;
+            color: #333;
+        }
+
+        .reset-btn:hover {
+            background: #d1d5db;
+        }
+
+        #msg {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="college-name">ISTS</div>
+
+        <h1 class="login-title">LOGIN SYSTEM</h1>
+
+        <div class="input-group">
+            <label for="us">USERNAME</label>
+            <input type="text" id="us" placeholder="Enter username">
+        </div>
+
+        <div class="input-group">
+            <label for="pw">PASSWORD</label>
+            <input type="password" id="pw" placeholder="Enter password">
+        </div>
+
+        <div class="button-group">
+            <button class="login-btn" onclick="login()">Login</button>
+            <button class="reset-btn" onclick="reset()">Reset</button>
+        </div>
+
+        <p id="msg"></p>
+
+    </div>
+
+    <script>
+
+        let username = document.getElementById("us");
+        let password = document.getElementById("pw");
+
+        function login() {
+
+            let user = username.value;
+            let pass = password.value;
+
+            if (user == "ISTS" && pass == "1234") {
+
+                document.getElementById("msg").innerHTML = "Login Successful";
+                document.getElementById("msg").style.color = "green";
+
+            }
+            else {
+
+                document.getElementById("msg").innerHTML = "Invalid Username or Password";
+                document.getElementById("msg").style.color = "red";
+
+            }
+        }
+
+        function reset() {
+
+            username.value = "";
+            password.value = "";
+            document.getElementById("msg").innerHTML = "";
+
+        }
+
+    </script>
+
+</body>
+</html>
+
